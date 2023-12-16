@@ -19,8 +19,9 @@ Route::post('/', [\App\Http\Controllers\Auth\AuthController::class, 'login'])->n
 Route::post('logout', [\App\Http\Controllers\Auth\AuthController::class, 'logout'])->name('logout');
 Route::get('register', [\App\Http\Controllers\Auth\AuthController::class, 'showRegistrationForm'])->name('register');
 Route::post('register/create', [\App\Http\Controllers\Auth\AuthController::class, 'register'])->name('register.post');
-Route::get('/home', [\App\Http\Controllers\CalonMahasiswaController::class, 'create'])->name('calon_mahasiswa.create');
-Route::post('/home', [\App\Http\Controllers\CalonMahasiswaController::class, 'store'])->name('calon_mahasiswa.store');
+    Route::get('/home', [\App\Http\Controllers\CalonMahasiswaController::class, 'create'])->name('calon_mahasiswa.create');
+    Route::post('/home', [\App\Http\Controllers\CalonMahasiswaController::class, 'store'])->name('calon_mahasiswa.store');
+    Route::get('/home/status', [\App\Http\Controllers\CalonMahasiswaController::class, 'index'])->name('calon_mahasiswa.show');
 
 Route::middleware(['auth', 'checkadmin'])->group(function () {
     Route::get('admin/students', [AdminController::class, 'index'])->name('admin.students.index');

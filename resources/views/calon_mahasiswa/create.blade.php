@@ -14,12 +14,25 @@
         <input type="text" id="id_card_address" name="id_card_address" placeholder="Id Card Address">
         <label for="current_address">Current Address</label>
         <input type="text" id="current_address" name="current_address" placeholder="Current Address">
-        <label for="district">District</label>
-        <input type="text" id="district" name="district" placeholder="District">
-        <label for="regency">Regency</label>
-        <input type="text" id="regency" name="regency" placeholder="Regency">
         <label for="province">Province</label>
-        <input type="text" id="province" name="province" placeholder="Province">
+        <select id="province" name="province">
+          @foreach ($provinsi as $province)
+            <option value="{{ $province['nama'] }}">{{ $province['nama'] }}</option>
+          @endforeach
+        </select>
+        <label for="regency">Regency</label>
+        <select id="regency" name="regency">
+          @foreach ($regencies as $regency)
+            <option value="{{ $regency->name }}">{{ $regency->name }}</option>
+          @endforeach
+
+        </select>
+        <label for="district">District</label>
+        <select id="district" name="regency">
+          @foreach ($districts as $district)
+            <option value="{{ $district->name }}">{{ $district->name }}</option>
+          @endforeach
+        </select>
         <label for="phone_number">Phone Number</label>
         <input type="number" id="phone_number" name="phone_number" placeholder="Phone Number">
         <label for="email">Email</label>

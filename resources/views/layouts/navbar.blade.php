@@ -4,7 +4,7 @@
         {{-- check if user is logged in --}}
         @auth
             <div class="navbar-nav">
-                <a class="nav-link" style="color: white;" href="{{ '/admin/students' }}">Home</a>
+                <a class="nav-link" style="color: white;">Home</a>
 
                 <a class="nav-link" href="{{ '/admin/students' }}">My Student</a>
             </div>
