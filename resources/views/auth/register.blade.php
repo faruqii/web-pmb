@@ -50,3 +50,4 @@
 <script>
     alert("{{ session('success') }}");
 </script>
+@endif
