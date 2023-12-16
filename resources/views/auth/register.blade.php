@@ -46,3 +46,7 @@
         </div>
     </div>
 </section>
+@if (session('success'))
+<script>
+    alert("{{ session('success') }}");
+</script>

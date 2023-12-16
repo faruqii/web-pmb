@@ -53,6 +53,6 @@ class CalonMahasiswaController extends Controller
         }
 
         // After storing the data and document, redirect to the registration page
-        return redirect()->route('register');
+        return redirect()->route('calon_mahasiswa.create')->with('success', 'Student data added');
     }
 }

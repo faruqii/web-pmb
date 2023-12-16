@@ -22,7 +22,7 @@ class CheckAdmin
         if (!Auth::check() || Auth::user()->role !== 'admin') {
             // If the user is not logged in or not an admin
             // Redirect them with an error message
-            return redirect('/home')->with('error', 'You are not authorized to access this page.');
+            return redirect('/home')->with('success', 'You have logged in successfully.');
         }
 
         return $next($request);

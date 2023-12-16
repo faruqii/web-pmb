@@ -16,9 +16,6 @@
                         {{ auth()->user()->name }}
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item text-black" href="{{ '/profile/'.auth()->user()->id }}">Profile</a></li>
-                        {{-- Logout --}}
-                        <li>
                             <form action="{{ url('/logout') }}" method="POST">
                                 @csrf
                                 <button type="submit" class="dropdown-item text-">Logout</button>
@@ -30,7 +27,7 @@
         @else
             <div class="navbar-nav w-100 d-flex justify-content-between">
                 <a class="nav-link active" aria-current="page" href="{{ 'home' }}">Home</a>
-                <a class="nav-link" href="{{ 'login' }}">Login</a>
+                <a class="nav-link" href="{{ '/' }}">Login</a>
             </div>
         @endauth
 

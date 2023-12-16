@@ -42,7 +42,7 @@ class AuthController extends Controller
 
         Auth::login($user);
 
-        return redirect($this->redirectPath());
+        return redirect($this->redirectPath())->with('success', 'Register Successfully');
     }
 
     // Show login form
@@ -58,19 +58,23 @@ class AuthController extends Controller
             'email' => 'required|string|email',
             'password' => 'required|string',
         ]);
-
+    
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
-
+    
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->filled('remember'))) {
+            // Set a flash message for successful login
+            session()->flash('success', 'You have logged in successfully.');
+    
             return redirect()->intended($this->redirectPath());
         }
-
+    
         return redirect()->back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ]);
     }
+    
 
     // Logout user
     public function logout(Request $request)

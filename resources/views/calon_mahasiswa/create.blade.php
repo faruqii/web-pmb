@@ -25,7 +25,11 @@
         <label for="email">Email</label>
         <input type="email" id="email" name="email" placeholder="Email">
         <label for="nationality_status">Nationality Status</label>
-        <input type="text" id="nationality_status" name="nationality_status" placeholder="Nationality Status">
+        <select id="nationality_status" name="nationality_status">
+            <option value="WNI">WNI</option>
+            <option value="WNI Keturanan">WNI Keturunan</option>
+            <option value="WNA">WNA</option>
+        </select>
         <label for="foreign_nationality">Foreign Nationality</label>
         <input type="text" id="foreign_nationality" name="foreign_nationality" placeholder="Foreign Nationality">
         <label for="date_of_birth">Date Of Birth</label>
@@ -33,15 +37,34 @@
         <label for="birth_place">Birth Place</label>
         <input type="text" id="birth_place" name="birth_place" placeholder="Birth Place">
         <label for="gender">Gender</label>
-        <input type="text" id="gender" name="gender" placeholder="Gender">
+        <select id="gender" name="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        </select>
         <label for="marital_status">Marital Status</label>
-        <input type="text" id="marital_status" name="marital_status" placeholder="Marital Status">
+        <select id="marital_status" name="marital_status">
+          <option value="single">Single</option>
+          <option value="married">Married</option>
+          <option value="other">Other</option>
+          </select>
         <label for="religion">Religion</label>
-        <input type="text" id="religion" name="religion" placeholder="Religion">
+    <select id="religion" name="religion">
+        <option value="Islam">Islam</option>
+        <option value="Catholic">Catholic</option>
+        <option value="Christian">Christian</option>
+        <option value="Hindu">Hindu</option>
+        <option value="Buddha">Buddha</option>
+        <option value="Other">Other</option>
+    </select>
         <label for="inputGroupFile01">Document</label>
         <input type="file" class="form-control" id="inputGroupFile01" name="document" style="height: 40px;">
         <button type="submit" class="btn btn-primary" style="margin-top: 40px;">Selesai</button>
       </form>
     </div>
   </section>
+  @if (session('success'))
+  <script>
+      alert("{{ session('success') }}");
+  </script>
+@endif
 @endsection
