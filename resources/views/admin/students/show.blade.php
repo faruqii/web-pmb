@@ -11,9 +11,9 @@
                     @csrf
                     @method('POST')
                     <label for="full_name">Full Name</label>
-        <input type="text" id="full_name" name="full_name" value='{{ $student->full_name }}''>
+        <input type="text" id="full_name" name="full_name" value='{{ $student->full_name }}'>
         <label for="id_card_address">Id Card Address</label>
-        <input type="text" id="id_card_address" name="id_card_address" value='{{ $student->id_card_address }}''>
+        <input type="text" id="id_card_address" name="id_card_address" value='{{ $student->id_card_address }}'>
         <label for="current_address">Current Address</label>
         <input type="text" id="current_address" name="current_address" value='{{ $student->current_address }}'>
         <label for="district">District</label>
@@ -37,7 +37,7 @@
         <label for="date_of_birth">Date Of Birth</label>
         <input type="date" id="birth_data" name="birth_date">
         <label for="birth_place">Birth Place</label>
-        <input type="text" id="birth_place" name="birth_place" value='{{ $student->birth_place }}''>
+        <input type="text" id="birth_place" name="birth_place" value='{{ $student->birth_place }}'>
         <label for="gender">Gender</label>
         <select id="gender" name="gender">
           <option value="male">Male</option>
