@@ -22,7 +22,7 @@ Route::post('register/create', [\App\Http\Controllers\Auth\AuthController::class
 Route::get('/', [\App\Http\Controllers\CalonMahasiswaController::class, 'create'])->name('calon_mahasiswa.create');
 Route::post('/', [\App\Http\Controllers\CalonMahasiswaController::class, 'store'])->name('calon_mahasiswa.store');
 
-Route::middleware(['auth', 'isAdmin'])->group(function () {
+Route::middleware(['auth', 'checkadmin'])->group(function () {
     Route::get('admin/students', [AdminController::class, 'index'])->name('admin.students.index');
     Route::get('admin/students/{id}', [AdminController::class, 'show'])->name('admin.students.show');
     Route::post('admin/students/{id}/status', [AdminController::class, 'updateStatus'])->name('admin.students.updateStatus');
