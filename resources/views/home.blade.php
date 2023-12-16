@@ -2,7 +2,11 @@
 
 @section('content')
 
-<h1>Home</h1>
+<section>
+  <div class="container">
+    <h1 class='tambahh1'>Home</h1>
+  </div>
+</section>
 
 @endsection
 

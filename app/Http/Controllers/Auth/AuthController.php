@@ -82,7 +82,7 @@ class AuthController extends Controller
     // Where to redirect users after login/registration.
     protected function redirectPath()
     {
-        return '/home'; // or any route you prefer
+        return '/admin/students'; // or any route you prefer
     }
 }
 

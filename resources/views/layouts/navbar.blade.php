@@ -4,11 +4,12 @@
         {{-- check if user is logged in --}}
         @auth
             <div class="navbar-nav">
-                <a class="nav-link" style="color: white;" href="{{ '/' }}">Home</a>
-                <a class="nav-link" href="{{ '/list' }}">MyCar</a>
+                <a class="nav-link" style="color: white;" href="{{ '/admin/students' }}">Home</a>
+
+                <a class="nav-link" href="{{ '/admin/students' }}">My Student</a>
             </div>
             <div class="d-flex">
-                <a href="{{ '/add' }}" class="btn btn-light text-black" role="button">Add Car</a>
+                {{-- <a href="{{ '/add' }}" class="btn btn-light text-black" role="button">Add Car</a> --}}
                 <div class="dropdown ms-4">
                     <button class="btn btn-light dropdown-toggle text-" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">

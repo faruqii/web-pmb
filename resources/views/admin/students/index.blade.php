@@ -3,7 +3,7 @@
 @section('content')
   <section id="list">
     <div class="container">
-      <h1>My Showroom</h1>
+      <h1>My Student List</h1>
       @if (count($students) > 0)
         <div class="table-responsive">
           <table class="table-striped table">
@@ -24,6 +24,7 @@
                 <th>Gender</th>
                 <th>Marital Status</th>
                 <th>Religion</th>
+                <th>Registration Status</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -45,9 +46,14 @@
                   <td>{{ $row->gender }}</td>
                   <td>{{ $row->marital_status }}</td>
                   <td>{{ $row->religion }}</td>
+                  <td>{{ $row->registration_status }}</td>
                   <td>
-                    <a href="{{ url('admin/students/' . $row->id) }}" class="btn btn-warning">Edit</a>
-                    <a href="{{ url('admin/students/delete/' . $row->id) }}" class="btn btn-danger">Delete</a>
+                    <a href="{{ url('admin/students/' . $row->id) }}" class="btn btn-warning" style='border-radius: 100px; width:140px; height: 36px;'>Edit</a>
+                    <form action='{{ route('admin.students.destroy', [$row->id]) }}' method='POST'>
+                      @csrf
+                      @method('DELETE')
+                      <button type='submit' class='btn btn-danger' style='border-radius: 100px; width:140px; height: 36px;'>Delete</button>
+                    </form>
                 </tr>
               @endforeach
             </tbody>

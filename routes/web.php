@@ -14,13 +14,13 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-Route::get('login', [\App\Http\Controllers\Auth\AuthController::class, 'showLoginForm'])->name('login');
-Route::post('login', [\App\Http\Controllers\Auth\AuthController::class, 'login'])->name('login.post');
+Route::get('/', [\App\Http\Controllers\Auth\AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/', [\App\Http\Controllers\Auth\AuthController::class, 'login'])->name('login.post');
 Route::post('logout', [\App\Http\Controllers\Auth\AuthController::class, 'logout'])->name('logout');
 Route::get('register', [\App\Http\Controllers\Auth\AuthController::class, 'showRegistrationForm'])->name('register');
 Route::post('register/create', [\App\Http\Controllers\Auth\AuthController::class, 'register'])->name('register.post');
-Route::get('/', [\App\Http\Controllers\CalonMahasiswaController::class, 'create'])->name('calon_mahasiswa.create');
-Route::post('/', [\App\Http\Controllers\CalonMahasiswaController::class, 'store'])->name('calon_mahasiswa.store');
+Route::get('/home', [\App\Http\Controllers\CalonMahasiswaController::class, 'create'])->name('calon_mahasiswa.create');
+Route::post('/home', [\App\Http\Controllers\CalonMahasiswaController::class, 'store'])->name('calon_mahasiswa.store');
 
 Route::middleware(['auth', 'checkadmin'])->group(function () {
     Route::get('admin/students', [AdminController::class, 'index'])->name('admin.students.index');
@@ -28,9 +28,4 @@ Route::middleware(['auth', 'checkadmin'])->group(function () {
     Route::post('admin/students/{id}/status', [AdminController::class, 'updateStatus'])->name('admin.students.updateStatus');
     Route::delete('admin/students/delete/{id}', [AdminController::class, 'destroy'])->name('admin.students.destroy');
 });
-
-
-Route::get('/home', function () {
-    return view('home');
-})->name('home');
 
