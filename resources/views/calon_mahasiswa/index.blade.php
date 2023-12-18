@@ -3,7 +3,7 @@
 @section('content')
   <section id="list">
     <div class="container">
-      <h1>My Student List</h1>
+      <h1>Student Registration Status</h1>
       @if (count($students) > 0)
         <div class="table-responsive">
           <table class="table-striped table">

@@ -61,10 +61,14 @@
         <label for="inputGroupFile01">Document</label>
         <input type="file" class="form-control" id="inputGroupFile01" name="document" style="height: 40px;">
         <label for="regis_status">Registration Status</label>
-        <input type="text" id="regis_status" name="registration status" value='{{ $student->registration_status }}'>
-                    <button type="submit" class='btn btn-primary' style='margin-top: 40px;'>Edit</button>
-                  </form>
-                </div>
+        <select id="regis_status" name="registration_status" class="">
+          <option value="pending">Pending</option>
+          <option value="accepted">Accepted</option>
+          <option value="rejected">Rejected</option>
+        </select>
+        <button type="submit" class='btn btn-warning' style='margin-top: 100px;'>Edit</button>
+      </form>
+    </div>
         @endauth
     </div>
   </section>

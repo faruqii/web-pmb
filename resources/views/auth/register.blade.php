@@ -3,9 +3,6 @@
 <section id="register">
     <div class="container-fluid">
         <div class="row align-items-center">
-            {{-- <div class="col-md-6 min-vh-100 left">
-                <img src="/assets/img/hrv.png" style="object-fit:fill; width:100%; height:100%;" alt="foto">
-            </div> --}}
             <div class="mt-5">
                 <div class="form-login m-auto ps-5">
                     <h2 class="fw-bold mb-4">Register</h2>
@@ -35,7 +32,7 @@
                         </div>
                         <div class="form-outline mb-4">
                             <div class="text-center text-lg-start mt-4 pt-2">
-                                <button type="submit" class="btn btn-primary btn-lg"
+                                <button type="submit" class="btn btn-warning btn-lg"
                                     style="padding-left: 2.5rem; padding-right: 2.5rem;">Daftar</button>
                                 <p class="small fw-bold mt-2 pt-1 mb-0">anda sudah punya akun? <a
                                         href="{{ '/' }}" class="link-danger">Login</a></p>

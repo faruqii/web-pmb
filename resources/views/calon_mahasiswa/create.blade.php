@@ -71,7 +71,7 @@
     </select>
         <label for="inputGroupFile01">Document</label>
         <input type="file" class="form-control" id="inputGroupFile01" name="document" style="height: 40px;">
-        <button type="submit" class="btn btn-primary" style="margin-top: 40px;">Selesai</button>
+        <button type="submit" class="btn btn-warning" style="margin-top: 40px;">Selesai</button>
       </form>
     </div>
   </section>
