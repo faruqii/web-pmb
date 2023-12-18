@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\ProspectiveStudent;
 use App\Models\Student;
 use Illuminate\Support\Facades\Storage;
-use Barryvdh\DomPDF\PDF;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class AdminController extends Controller
 {
@@ -48,7 +48,7 @@ class AdminController extends Controller
     public function generatePDF($id)
     {
         $student = Student::findOrFail($id);
-        $pdf = PDF::loadView('admin.students.pdf', compact('student'));
-        return $pdf->download('student.pdf');
+        $pdf = PDF::loadView('admin.students.pdf', compact('student'))->setOptions(['defaultFont' => 'sans-serif']);
+        return $pdf->download('Student Data.pdf');
     }
 }

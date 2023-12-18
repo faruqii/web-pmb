@@ -59,7 +59,7 @@ class CalonMahasiswaController extends Controller
             'gender' => 'required|string|max:255',
             'marital_status' => 'required|string|max:255',
             'religion' => 'required|string|max:255',
-            'document' => 'required|file|mimes:pdf|max:2048', // 2MB Max
+            'document', // 2MB Max
         ]);
 
         $calonMahasiswa = Student::create($request->all());

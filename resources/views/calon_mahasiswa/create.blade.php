@@ -28,7 +28,7 @@
 
         </select>
         <label for="district">District</label>
-        <select id="district" name="regency">
+        <select id="district" name="district">
           @foreach ($districts as $district)
             <option value="{{ $district->name }}">{{ $district->name }}</option>
           @endforeach

@@ -54,6 +54,7 @@
                       @method('DELETE')
                       <button type='submit' class='btn btn-danger' style='border-radius: 100px; width:140px; height: 36px;'>Delete</button>
                     </form>
+                    <a href="{{ route('admin.students.generatePDF', [$row->id]) }}" class="btn btn-warning" style='border-radius: 100px; width:140px; height: 36px;'>Export</a>
                 </tr>
               @endforeach
             </tbody>
