@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\ProspectiveStudent;
 use App\Models\Student;
 use Illuminate\Support\Facades\Storage;
+use Barryvdh\DomPDF\PDF;
 
 class AdminController extends Controller
 {
@@ -43,4 +44,11 @@ class AdminController extends Controller
         return back()->with('success', 'Student record deleted.');
     }
 
+    // Generate a PDF for a prospective student
+    public function generatePDF($id)
+    {
+        $student = Student::findOrFail($id);
+        $pdf = PDF::loadView('admin.students.pdf', compact('student'));
+        return $pdf->download('student.pdf');
+    }
 }
